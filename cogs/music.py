@@ -475,12 +475,12 @@ class music(commands.Cog):
             try:
                 source = await YTDLSource.create_source(ctx, search, loop=self.bot.loop)
             except YTDLError as e:
-                await ctx.send('An error occurred while processing this request: {}'.format(str(e)))
+                await ctx.send('Oopsie a fucky wucky hawpened (｡+･`ω･´): {}'.format(str(e)))
             else:
                 song = Song(source)
 
                 await ctx.voice_state.songs.put(song)
-                await ctx.send('Enqueued {}'.format(str(source)))
+                await ctx.send('Pwaying da swong {} fow yoy (・`ω´・)'.format(str(source)))
 
     @_connect.before_invoke
     @_play.before_invoke
